@@ -1,6 +1,7 @@
 ﻿'===========================================================
 '20201007 - DJ: Initial creation
 '20201014 - DJ: Turned off smart identification for the final status object
+'20210107 - DJ: Added synchronization steps.
 '===========================================================
 
 '===========================================================
@@ -85,18 +86,21 @@ PPMProposalSearch "Standards Review", "Status: Standards Review"
 'BP:  Click the left Approved button
 '===========================================================================================
 Browser("Search Requests").Page("Req Details").Link("First Approved Button").Click
+rc = Browser("Search Requests").Page("Req Details").WebElement("Status: Review Complete").Exist
 AppContext.Sync																				'Wait for the browser to stop spinning
 
 '===========================================================================================
 'BP:  Click the remaining Approved button
 '===========================================================================================
 Browser("Search Requests").Page("Req Details").Link("Approved Button").Click
+rc = Browser("Search Requests").Page("Req Details").WebElement("Status: ITSC Review").Exist
 AppContext.Sync																				'Wait for the browser to stop spinning
 
 '===========================================================================================
 'BP:  Click the remaining Approved button
 '===========================================================================================
 Browser("Search Requests").Page("Req Details").Link("Approved Button").Click
+rc = Browser("Search Requests").Page("Req More Information").WebEdit("Project Manager").Exist
 AppContext.Sync																				'Wait for the browser to stop spinning
 
 '===========================================================================================
@@ -113,6 +117,7 @@ Browser("Search Requests").Page("Req More Information").WebEdit("Project Type Fi
 'BP:  Click the Continue Workflow Action button
 '===========================================================================================
 Browser("Search Requests").Page("Req More Information").WebElement("Continue Workflow Action Button").Click
+rc = Browser("Search Requests").Page("Req Details").WebElement("Status: Project Creation").Exist
 AppContext.Sync																				'Wait for the browser to stop spinning
 
 '===========================================================================================
