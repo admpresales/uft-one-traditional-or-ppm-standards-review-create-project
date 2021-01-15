@@ -2,6 +2,7 @@
 '20201007 - DJ: Initial creation
 '20201014 - DJ: Turned off smart identification for the final status object
 '20210107 - DJ: Added synchronization steps.
+'20210115 - DJ: Disabled smart identification
 '===========================================================
 
 '===========================================================
